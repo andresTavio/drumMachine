@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Drum Machine</title>
+<link rel="stylesheet" type="text/css" href="dm.css"/>
+</head>
+
+<body>
+<div id="title">
+<p>Drum Machine</p>
+</div> <!-- Title -->
+<br>
+<script type="text/javascript" src="soundObject.js"></script>
+<script type="text/javascript" src="drum.js"></script>
+<div id="description">
+	<p class="text"><span class="pHead">About:</span><br><br>
+		This drum machine utilizes various new features in
+		HTML5. The sound uses Google's Web Audio API (Javascript), and 
+		the slider controls use the "range" input tag.<br><br>
+		<span class="pHead">Usage:</span><br><br>
+		The rows of the grid correspond to different instruments. Select a
+		pattern by clicking on the buttons, then press the "Start Loop"
+		button. The speed of the loop can be controlled with the "Tempo"
+		slider. There are currently two filters, one is a high-pass filter
+		and the other is a low-pass filter, both can be controlled by their
+		corresponding sliders<br><br>
+		<span class="pHead">Enjoy!</span></p>
+</div> <!-- description -->
+<div id="buttonGrid">
+<p class="drumTitle">BeatMaker 4000</p>
+
+<img src="images/buttonUp.png" id="1" class="off"
+	onclick="changeState(this)" style="">
+<img src="images/buttonUp.png" id="5" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="9" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="13" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="17" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="21" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="25" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="29" class="off"
+	onclick="changeState(this)">
+<br>
+
+<img src="images/buttonUp.png" id="2" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="6" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="10" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="14" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="18" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="22" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="26" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="30" class="off"
+	onclick="changeState(this)">
+<br>
+
+<img src="images/buttonUp.png" id="3" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="7" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="11" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="15" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="19" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="23" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="27" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="31" class="off"
+	onclick="changeState(this)">
+<br>
+
+<img src="images/buttonUp.png" id="4" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="8" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="12" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="16" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="20" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="24" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="28" class="off"
+	onclick="changeState(this)">
+<img src="images/buttonUp.png" id="32" class="off"
+	onclick="changeState(this)">
+<br>
+<br>
+<a href="#" class="buttons" onclick="beginLoop()">Start Loop</a>
+<a href="#" class="buttons" onclick="endLoop()">End Loop</a>
+<br>
+<br>
+<p class="label">Tempo:</p>
+<p class="label" id="displayTempo">120</p>
+<input type="range" max="170" min="60" value="120" id="tempoSlider">
+<br><br>
+<p class="label">Filter Low:</p>
+<input type="range" max="20" min="0" value="0" step="0.01"
+id="filterLSlider">
+<br><br>
+<p class="label">Filter High:</p>
+<input type="range" max="20" min="0" value="0" step="0.01"
+id="filterHSlider">
+
+<br>
+<br>
+</div>	<!-- buttonGrid -->
+</body>
+
+</html>
