@@ -1,0 +1,25 @@
+Drum Machine created using Google's Web Audio Api
+
+It is still under construction
+
+About:
+
+This drum machine utilizes various new features in HTML5. The sound uses Google's Web 
+Audio API (Javascript), and the slider controls use the "range" input tag.
+
+Usage:
+	
+The rows of the grid correspond to different instruments. Select a
+ pattern by clicking on the buttons, 
+then press the "Start Loop"
+ button. The speed of the loop can be controlled with the "Tempo"
+ slider. 
+There are currently two filters, one is a high-pass filter
+ and the other is a low-pass filter, both can be 
+controlled by their
+ corresponding sliders.
+
+******Currently supported in Chrome and Safari ONLY********
+
+The source needs to be run on a local server due to
+the XML requests made to load the sounds.
