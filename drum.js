@@ -1,13 +1,13 @@
 /*
  *	Web Audio Api based Drum Machine
  *
- *	Author: Andres Tavio
+ *	@author Andres Tavio
  */
 
 /*
 	TODO:
-	Keyboard Support
-	Choice of Instruments
+	-Keyboard Support
+	-Sample pad
 */
  
 window.onload = init;
@@ -16,7 +16,7 @@ var numofInstruments = 4;
 var numofColumns = 8;
 var buttonCount = 1;
 
-//Defining an array which corresponds to the columns of buttons
+//Defines an array which corresponds to the columns of buttons
 var columnArray = new Array(numofColumns);
 
 var filterLNode;
@@ -25,12 +25,29 @@ var filterHNode;
 function init() 
 {
 	//Initialize instruments, this includes loading
-	kickSound = new Sound("sounds/kick.wav");
-	tomSound = new Sound("sounds/tom.wav");
-	crashSound = new Sound("sounds/crash.wav");
-	hihatSound = new Sound("sounds/hihat.wav");
-	buttonSound = new Sound("sounds/button.wav");
+	kickSound1 = new Sound("sounds/kick1.wav");
+	snareSound1 = new Sound("sounds/snare1.wav");
+	crashSound1 = new Sound("sounds/crash1.wav");
+	hihatSound1 = new Sound("sounds/hihat1.wav");
+
+        kickSound2 = new Sound("sounds/kick2.wav");
+	snareSound2 = new Sound("sounds/snare2.wav");
+	crashSound2 = new Sound("sounds/crash2.wav");
+	hihatSound2 = new Sound("sounds/hihat2.wav");
+
+        kickSound3 = new Sound("sounds/kick3.wav");
+	snareSound3 = new Sound("sounds/snare3.wav");
+	crashSound3 = new Sound("sounds/crash3.wav");
+	hihatSound3 = new Sound("sounds/hihat3.wav");
 	
+        buttonSound = new Sound("sounds/button.wav");
+        
+        //Sets kit1 as the default
+        kickSound = kickSound1;
+        snareSound = snareSound1;
+        crashSound = crashSound1;
+        hihatSound = hihatSound1;    
+
 	//Initialize low filter
 	filterLNode = audioContext.createBiquadFilter();
 	filterLNode.type = 3;
@@ -80,6 +97,11 @@ var tempoM;
 var currentColumn = 0;
 var currentRow = 0;
 
+var kickSound;
+var snareSound;
+var crashSound;
+var hihatSound;
+
 //Checks a given column for active buttons and plays them
 function timing() 
 {
@@ -88,7 +110,7 @@ function timing()
 		play(kickSound);
 	}
 	if(columnArray[currentColumn][1].className == "on") {
-		play(tomSound);
+		play(snareSound);
 	}
 	if(columnArray[currentColumn][2].className == "on") {
 		play(hihatSound);
@@ -136,6 +158,35 @@ function changeState(button)
 	}
 }
 
-function play(sound) {
+function play(sound) 
+{
 	sound.play();
 }	
+
+//Toggles the different drum kits
+//Triggered by onclick events on kit radio buttons
+
+function changeKit(kit)
+{   
+    if(kit == "kit1") {
+	kickSound = kickSound1;
+	snareSound = snareSound1;
+	crashSound = crashSound1;
+	hihatSound = hihatSound1;
+    }
+
+    if(kit == "kit2") {
+	kickSound = kickSound2;
+	snareSound = snareSound2;
+	crashSound = crashSound2;
+	hihatSound = hihatSound2;
+    }
+
+    if(kit == "kit3") {
+	kickSound = kickSound3;
+	snareSound = snareSound3;
+	crashSound = crashSound3;
+	hihatSound = hihatSound3;
+    }
+}
+
