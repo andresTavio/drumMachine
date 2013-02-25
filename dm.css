@@ -10,7 +10,20 @@
 	border-radius: 10px;
 	background-color: #2E2E2E;
 	border: 5px ridge #8181F7;
+	float: left;
 	
+}
+
+#controlGrid
+{
+        width: 300px;
+	margin-left: auto;
+	margin-right: 300px;
+	text-align: center;
+	border-radius: 10px;
+	background-color: #2E2E2E;
+	border: 5px ridge #8181F7;
+	float: right;
 }
 
 .text
@@ -20,30 +33,23 @@
 
 .drumTitle
 {
-	color: red;
 	text-align: left;
 	font-size: 25px;
 	margin-left: 10px;
 	font-style: italic;
 	font-family: "Rockwell";
-	background-color: #8181F7;
 	width: 225px;
-	border-radius: 5px;
-	border: 5px ridge gray;
-	color: black;
+	color: white;
 }
 
 .label
 {
 	font-family:"Rockwell";
 	display:inline;
-	color: black;
+	color: white;
 	margin-right: 10px;
-	background-color: #8181F7;
-	border-radius: 5px;
 	font-size: 20px;
 	font-style: bold;
-	border: 5px ridge gray;
 }
 
 .pHead
@@ -83,33 +89,18 @@ body
 	opacity: .6;
 }
 
-/*Buttons taken from cssbuttongenerator.com*/
 .buttons {
-	-moz-box-shadow:inset 0px 1px 0px 0px #f5978e;
-	-webkit-box-shadow:inset 0px 1px 0px 0px #f5978e;
-	box-shadow:inset 0px 1px 0px 0px #f5978e;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f) );
-	background:-moz-linear-gradient( center top, #f24537 5%, #c62d1f 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f');
-	background-color:#f24537;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
 	border-radius:6px;
-	border:1px solid #d02718;
+	border:1px solid #8181F7;
 	display:inline-block;
-	color:#ffffff;
+	color: white;
 	font-family:Rockwell;
 	font-size:15px;
 	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:1px 1px 0px #810e05;
+	padding: 6px 24px
+
 }.buttons:hover {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537) );
-	background:-moz-linear-gradient( center top, #c62d1f 5%, #f24537 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537');
-	background-color:#c62d1f;
+	background-color: #8181F7;
 }.buttons:active {
-	position:relative;
-	top:1px;
+	
 }

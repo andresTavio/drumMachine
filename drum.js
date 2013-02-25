@@ -6,6 +6,12 @@
 
 /*
 	TODO:
+	-volume control for each instrument
+	    -play function could take a gain arg
+	-aesthetics
+	    -digital readout for bpm
+	    -vertical sliders
+	    -improve visual organization
 	-Keyboard Support
 	-Sample pad
 */
@@ -19,6 +25,7 @@ var buttonCount = 1;
 //Defines an array which corresponds to the columns of buttons
 var columnArray = new Array(numofColumns);
 
+//Two filters, one hi-pass and one low-pass
 var filterLNode;
 var filterHNode;
 
@@ -129,18 +136,27 @@ function timing()
 }
 
 var loopVariable;
+var isPlaying;
 
 //Calls the timing function according to the modified tempo
 function beginLoop() 
-{
-	tempoM = 30000 / tempo;
-	loopVariable = setInterval(timing, tempoM);
+{       
+        if(!isPlaying) {
+            tempoM = 30000 / tempo;
+            loopVariable = setInterval(timing, tempoM);
+        }
+        
+        isPlaying = true;
 }
 
 //Stops the function calls to timing
 function endLoop() 
 {
-	clearInterval(loopVariable);
+        if(isPlaying) {
+            clearInterval(loopVariable);
+        }
+	
+        isPlaying = false;
 }
 
 //This toggles the state of a button using CSS and plays the
